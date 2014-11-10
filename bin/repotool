@@ -9,8 +9,8 @@ import logging
     default='/etc/yum.conf',
     help='config file to use (defaults to /etc/yum.conf)')
 @click.option('-l', '--log-file', required=False, type=click.Path(),
-    default='/var/log/repoupdate.log',
-    help='Log file (defaults to /var/log/repoupdate.log)')
+    default='/var/log/repotool.log',
+    help='Log file (defaults to /var/log/repotool.log)')
 @click.option('-r', '--repoid', required=True, 
     help='repo id to query')
 @click.option('-p', '--path', required=True, type=click.Path(exists=True), 
