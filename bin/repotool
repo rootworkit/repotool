@@ -43,13 +43,12 @@ def updateRepo(repoid, path, config, log_file, verbose):
             click.echo("Successfully synced %s" % repoid)
         logging.info("Successfully synced %s", repoid)
     
-    # createrepo --update -v /var/repos/centos/7/centosplus/x86_64/
     logging.info("Updating metadata for %s", repoid)
     if verbose:
         click.echo("Updating metadata for %s" % repoid)
     
     crepo = subprocess.Popen(
-        ["/usr/bin/createrepo", "--update", path], 
+        ["/usr/bin/createrepo", path], 
         stdout=subprocess.PIPE, 
         stderr=subprocess.PIPE
     )
